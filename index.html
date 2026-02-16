@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter Template</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti for shooting star clicks -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Video iframe (replace with actual embed URL, e.g., YouTube) -->
+    <iframe width="200" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <h1 id="title"> <i> Read meeee !!♡ </i></h1>
+
+    
+    <!-- Images with placeholders -->
+    <img src="photo.png" alt="A beautiful photo for the love letter" class="photo-left">
+    <img src="photo1.png" alt="Another special photo" class="photo-right">
+    
+    <!-- Main message with typing effect -->
+    <p id="main-message">
+        <b>
+            i love you so much, i hope that you get everything
+            and anything you want in life. you deserve the best things
+            in this world. i hope you always stay happy. (with me)
+            i hope you always remember that i love you more than anything
+            in this world. you are my everything and i am so grateful
+            to have you in my life. thank you for everything.
+        </b>
+    </p>
+
+    <!-- PS section -->
+    <p id="ps-message">
+        <b>
+
+
+            ps.                                                              
+            i hope you like this love letter. i put a lot of effort into it
+        </b>
+    </p>
+
+    <!-- Signature -->
+    <h5> <i> - [Your Name], [Date] </i> </h5>
+
+    <!-- Interactive button to reveal more -->
+    <button id="reveal-btn">Reveal More Love 💖</button>
+    <div id="hidden-content" style="display: none;">
+        <p><b>Extra message: You're the light of my life, and I can't wait to create more memories with you!</b></p>
+    </div>
+
+    <!-- Music toggle (optional, add an audio element if needed) -->
+    <button id="music-btn">Play/Pause Music 🎵</button>
+    <audio id="bg-music" src="your-music.mp3" loop></audio>
+
+    <!-- Shooting stars background -->
+    <div class="night">
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+        <div class="shootingstar" onclick="triggerConfetti()"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

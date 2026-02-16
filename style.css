@@ -1,0 +1,202 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFB6C1;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #ee2222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Title with heartbeat animation */
+h1 {
+    color: #FF1493;
+    text-align: center;
+    margin-bottom: 30px;  /* Increased for more space below the title */
+    z-index: 10;
+    position: relative;
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+h3 {
+    color: #4d0027a2;
+    text-align: center;
+    margin-bottom: 10px;  /* Positive margin to space from images below */
+    z-index: 10;
+    position: relative;
+}
+
+h4, h5 {
+    color: #e10473a2;
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 10;
+    position: relative;
+}
+
+p {
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.8;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    z-index: 10;
+    position: relative;
+    margin-top: 20px;  /* Positive margin for space from images above */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#ps-message {
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.8;
+    padding: 20px;
+    background-color: rgba(255, 182, 193, 0.5);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    z-index: 10;
+    position: relative;
+    font-size: 18px;
+    color: #C71585;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Photos with fade-in animation */
+.photo-left, .photo-right {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+    border: 5px solid #FF69B4;
+    margin: 20px 0;  /* Reduced from 40px to prevent excessive spacing/pulling */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+    z-index: 10;
+    position: relative;
+}
+
+.photo-left {
+    align-self: flex-start;
+    margin-left: 50px;
+    animation-delay: 0.3s;
+}
+
+.photo-right {
+    align-self: flex-end;
+    margin-right: 50px;
+    animation-delay: 0.6s;
+    margin-top: -150px;  /* Reduced negative margin to -150px (from -250px) to lessen overlap with left photo, but keep some for design */
+}
+
+.extra-photo {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Buttons */
+button {
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    transition: background-color 0.3s;
+    z-index: 10;
+    position: relative;
+}
+
+button:hover {
+    background-color: #FF1493;
+}
+
+/* Shooting stars */
+.night {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shootingstar {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, #fff, transparent);
+    animation: shoot 3s linear infinite;
+    cursor: pointer; /* Make clickable */
+    pointer-events: auto;
+}
+
+.shootingstar:nth-child(1) { top: 10%; left: 50%; animation-delay: 0s; }
+.shootingstar:nth-child(2) { top: 20%; left: 70%; animation-delay: 0.8s; }
+.shootingstar:nth-child(3) { top: 30%; left: 30%; animation-delay: 1.6s; }
+.shootingstar:nth-child(4) { top: 50%; left: 80%; animation-delay: 2.4s; }
+.shootingstar:nth-child(5) { top: 60%; left: 20%; animation-delay: 3.2s; }
+.shootingstar:nth-child(6) { top: 70%; left: 60%; animation-delay: 4s; }
+.shootingstar:nth-child(7) { top: 40%; left: 90%; animation-delay: 4.8s; }
+.shootingstar:nth-child(8) { top: 80%; left: 40%; animation-delay: 5.6s; }
+.shootingstar:nth-child(9) { top: 15%; left: 85%; animation-delay: 6.4s; }
+.shootingstar:nth-child(10) { top: 85%; left: 15%; animation-delay: 7.2s; }
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-500px) translateY(500px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .photo-left, .photo-right {
+        width: 80%;
+        margin-left: 0;
+        margin-right: 0;
+        align-self: center;
+        margin-top: 10px;  /* Adjust for mobile to prevent overlap */
+    }
+    iframe {
+        width: 100%;
+        height: 150px;
+    }
+    h1 {
+        margin-bottom: 20px;  /* Tighter on mobile */
+    }
+    p {
+        margin-top: 10px;  /* Less space on mobile */
+    }
+}
